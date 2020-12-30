@@ -1,0 +1,12 @@
+Begin
+	Input a b c
+	If a > b and a > c
+		Output a là Giá Trị Lớn Nhất
+	Else
+		If b > c
+			Output b là giá trị lớn nhất
+		Else
+			Out c là giá trị lớn nhất
+		End if
+	End if
+End

@@ -1,0 +1,6 @@
+Begin
+	Input M là điểm số môn Toán , P là điểm số môn Lý , C là điểm số môn Hóa
+	A = ( M + P + C ) / 3
+	Output A
+End
+	      

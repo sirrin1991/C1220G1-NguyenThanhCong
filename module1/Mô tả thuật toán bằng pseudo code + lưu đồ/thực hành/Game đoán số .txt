@@ -1,0 +1,9 @@
+Begin
+	Input N
+	M là 1 số ngẫu nhiên từ 0-9
+	IF N==M
+	   Output "Dự đoán đúng"
+	Else
+	   Output "Dự đoán sai"
+	End IF
+End

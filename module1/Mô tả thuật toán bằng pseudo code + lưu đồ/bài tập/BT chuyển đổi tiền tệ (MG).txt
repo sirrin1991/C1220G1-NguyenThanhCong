@@ -1,0 +1,6 @@
+Begin
+	T = 23000
+	Input D là đô la Mỹ
+	v = D * T
+	Output V
+End
