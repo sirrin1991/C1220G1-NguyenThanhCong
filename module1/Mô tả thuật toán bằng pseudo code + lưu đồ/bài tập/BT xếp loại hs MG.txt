@@ -1,0 +1,23 @@
+Begin
+	Input M là số điểm của học sinh
+	If M > 100 and M < 0
+	    Output "Nhập Điểm Sai"
+	Else 
+	    IF M => 75 
+	       Output "Đạt Loại A"
+	    Else
+		If M => 60 and M < 75
+		   Output "Đạt Loại B"
+		Else
+		   If M =>45 and M < 60
+		      Output "Đạt Loại C"
+		   Else
+		      If M =>35 and M < 45
+			 Output "Đạt Loại D"
+		      Else Output "Đạt Loại E"
+		      EndIf
+		   EndIf
+		EndIf
+	     EndIf
+	EndIf
+End
