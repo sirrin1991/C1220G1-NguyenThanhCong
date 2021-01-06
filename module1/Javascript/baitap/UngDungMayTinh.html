@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng Dụng Máy Tính</title>
+</head>
+<body>
+<h2>Caculator</h2>
+<input type="text" id="s1" style="size: 150px">
+<input type="text" id="s2" style="size: 150px"> <br><br>
+<button type="button" onclick="add()" value="Addition">Addition(+)</button>
+<button type="button" onclick="su()" value="Subtraction">Subtraction(-)</button>
+<button type="button" onclick="mul()" value="Multiplication">Multiplication(X)</button>
+<button type="button" onclick="di()" value="Division">Division(/)</button>
+<p id="kq"></p>
+<script>
+    function add() {
+        let a = parseInt(document.getElementById("s1").value);
+        let b = parseInt(document.getElementById("s2").value);
+        let sum = a + b;
+        document.getElementById("kq").innerHTML = sum
+    }
+    function su() {
+        let a = parseInt(document.getElementById("s1").value);
+        let b = parseInt(document.getElementById("s2").value);
+        let sub = a - b;
+        document.getElementById("kq").innerHTML = sub
+    }
+    function mul() {
+        let a = parseInt(document.getElementById("s1").value);
+        let b = parseInt(document.getElementById("s2").value);
+        let mull = a * b;
+        document.getElementById("kq").innerHTML = mull
+    }
+    function di() {
+        let a = parseInt(document.getElementById("s1").value);
+        let b = parseInt(document.getElementById("s2").value);
+        let div = a / b;
+        document.getElementById("kq").innerHTML = div
+    }
+</script>
+</body>
+</html>

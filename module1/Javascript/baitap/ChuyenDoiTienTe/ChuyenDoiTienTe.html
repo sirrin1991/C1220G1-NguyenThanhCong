@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển Đổi Tiền Tệ</title>
+    <style>
+        .m { margin-left: 50px}
+        .m2 {margin-left: 250px}
+        .n2 {margin-left: 150px}
+        .m3 {margin-left: 220px}
+    </style>
+</head>
+<body>
+<form>
+    <span class="m"><b>Amount</b></span>
+    <span class="m2"><b>From Currency</b></span>
+    <span class="m3"><b>To Currency</b></span> <br>
+    <input type="text" name="tien" id="t">
+    <select class="n2" name="cur" style="width: 170px" id="s1">
+        <option name="curr" value="VN" id="vn">VietNam</option>
+        <option name="curr" value="USD" id="usd">USD</option>
+    </select>
+    <select class="n2" name="curr" style="width: 170px"id="s2">
+        <option name="curr" value="USD">USD</option>
+        <option name="curr" value="VN">VietNam</option>
+    </select>
+    <button type="button" onclick="td()" value="Convent" style="background-color: plum" class="m2">ConVent</button>
+    <p id="cv"></p>
+    <script>
+        function td() {
+            let a = document.getElementById("t").value;
+            let r = (a * 23000);
+            let y = (a / 23000);
+            let e =document.getElementById("s1").value;
+            let q =document.getElementById("s2").value;
+            if (e===q) {
+                document.getElementById("cv").innerHTML = ("Ketqua " + a)
+            }else if (e==="VN" && q==="USD"){
+                document.getElementById("cv").innerHTML = ("Ketqua " + y)}
+            else {
+                document.getElementById("cv").innerHTML = ("Ketqua " + r)
+            }
+
+        }
+
+
+
+    </script>
+
+
+</form>
+</body>
+</html>

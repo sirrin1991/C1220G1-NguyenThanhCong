@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện Tích Chu Vi Hình Tròn</title>
+</head>
+<body>
+<p><b>Nhập bán kính</b></p>
+<input type="text" id="r" name="bankinh"> <br> <br> <br>
+<button type="button" onclick="dt()">Diện Tích</button><p id="result"></p>
+<br> <br> <br>
+<button type="button" onclick="cv()">Chu Vi</button>
+<p id="cvv"></p>
+<script>
+    function dt() {
+        let a = document.getElementById("r").value;
+        let d = (a*a*3.14);
+        document.getElementById("result").innerText=("Diện tích hình tròn " + d)
+
+    }
+    function cv() {
+        let a = document.getElementById("r").value;
+        let c = (a*2*3.14);
+        document.getElementById("cvv").innerText=("Chu vi hình tròn " + c)
+
+    }
+</script>
+
+</body>
+</html>

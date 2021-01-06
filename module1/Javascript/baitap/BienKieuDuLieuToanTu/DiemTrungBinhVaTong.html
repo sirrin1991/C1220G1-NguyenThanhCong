@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Điểm Trung Bình Và Tổng</title>
+</head>
+<body>
+<p><b>Điểm Vật Lý</b></p> <br>
+<input type="text" name="Phy" id="l">
+<p><b>Điểm Sinh Học</b></p> <br>
+<input type="text" name="Bio" id="s">
+<p><b>Điểm Hóa Học</b></p> <br>
+<input type="text" name="Che" id="h"> <br><br><br>
+<button type="button" onclick="tong()">Tổng Điểm</button>
+
+<br> <br> <br>
+<button type="button" onclick="tb()">Trung Bình</button>
+<script>
+    function tong() {
+        let a = document.getElementById("l").value;
+        let b = document.getElementById("s").value;
+        let c = document.getElementById('h').value;
+        let sum = parseInt(a) + parseInt(b) +parseInt(c);
+        alert("Tổng điểm là " + sum)
+    }
+    function tb() {
+        let a = document.getElementById("l").value;
+        let b = document.getElementById("s").value;
+        let c = document.getElementById('h').value;
+        let sum = parseInt(a) + parseInt(b) +parseInt(c);
+        let tbi = sum / 3;
+        alert("Điểm Trung Bình " + tbi)
+
+    }
+</script>
+</body>
+</html>
