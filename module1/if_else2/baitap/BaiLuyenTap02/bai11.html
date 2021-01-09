@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tongTn = parseFloat(prompt("Tổng thu nhập trong một tháng ( đơn vị triệu đồng )"));
+    switch (true) {
+        case (tongTn<=5):
+            alert("Thuế bạn phải nộp là " + tongTn*5/100 + " triệu VND");
+            break;
+        case (tongTn<=10):
+            alert("Thuế bạn phải nộp là " + (0.25+(10-tongTn)*0.1) + " triệu VND");
+            break;
+        case (tongTn<=18):
+            alert("Thuế bạn phải nộp là "+ (0.75+(18-tongTn)*0.15)+ " triệu VND");
+            break;
+        case (tongTn<=32):
+            alert("Thuế bạn phải nộp là " + (1.95+(32-tongTn)*0.2)+ " triệu VND");
+            break;
+        case (tongTn<=52):
+            alert("Thuế bạn phải nộp là " + (4.75+(52-tongTn)*0.25)+ " triệu VND");
+            break;
+        case (tongTn<=80):
+            alert("Thuế bạn phải nội là " + (9.75+(80-tongTn)*0.3)+ " triệu VND");
+            break;
+        default:
+            alert("Thuế bạn phải nộp là " + (18.15+(tongTn-80)*0.35)+ " triệu VND");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let phutNoiThanh = parseFloat(prompt("Nhập số phút nội thành"));
+    let phutNoiMang = parseFloat(prompt("Nhập số phút nội mạng liên tỉnh"));
+    let phutNgoaiMang = parseFloat(prompt("Nhập số phút ngọai mạng liên tỉnh"));
+    let cuocTruocVat = phutNoiThanh*200 + phutNoiMang*800 + phutNgoaiMang*891;
+    let cuocSauThueVat = cuocTruocVat * 10 / 100;
+    alert("Cước viễn thông tháng này " + cuocSauThueVat);
+</script>
+</body>
+</html>

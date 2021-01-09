@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let kwh = parseFloat(prompt("Nhập số điện sử dụng trong tháng"));
+    switch (true) {
+        case (kwh < 0):
+            alert("Nhập sai số điện. Vui lòng nhập lại !");
+            break;
+        case (kwh<=50 && kwh >= 0):
+            alert("Giá điện tháng này là " + kwh * 1.678 + " VND");
+            break;
+        case (kwh<=100):
+            let gd1 = (50 * 1.678) + ((kwh-50)*1.734);
+            alert("Giá điện tháng này là " + gd1 + " VND");
+            break;
+        case (kwh<=200):
+            let gd2 = (50*1.678)+(50*1.734)+((kwh-100)*2.014);
+            alert("Giá điện tháng này là "+ gd2 + " VND");
+            break;
+        case (kwh<=300):
+            let gd3 = (50*1.678)+(50*1.734)+(100*2.014) + ((300-kwh)*2.536);
+            alert("Giá điện tháng này là " + gd3 + " VND");
+            break;
+        case (kwh<=400):
+            let gd4 = (50*1.678)+(50*1.734)+(100*2.014) + (100*2.536) + ((400-kwh)*2.834);
+            alert("Giá điện tháng này là " + gd4 + " VND");
+            break;
+        default :
+            let gd5 = (50*1.678)+(50*1.734)+(100*2.014) + (100*2.536) + (100*2.834) + ((kwh-400)*2.927);
+            alert("Giá điện tháng này là " + gd5 + " VND")
+
+    }
+</script>
+</body>
+</html>

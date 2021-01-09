@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ngày trong tháng</title>
+</head>
+<body>
+<input type="text" id="in" name="input">
+<button type="button" onclick="doo()" value="Tính Số Ngày">Tính Số Ngày</button>
+<p id="songay"></p>
+<script>
+    function doo() {
+        let month = parseInt(document.getElementById("in").value);
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                document.getElementById("songay").innerHTML = ("Có 31 ngày");
+                break;
+            case 2:
+                document.getElementById("songay").innerHTML = "Có 28 hoặc 28 ngày";
+                break;
+            default:
+                document.getElementById("songay").innerHTML = "Có 30 ngày";
+
+        }
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let matHang1 = parseInt(prompt("Số lượng mặt hàng 1 bán được"));
+    let matHang2 = parseInt(prompt("Số lượng mặt hàng 2 bán được"));
+    let matHang3 = parseInt(prompt("Số lượng mặt hàng 3 bán được"));
+    let hoaHong1 = (matHang1 * 50000)* 10 / 100 ;
+    let hoaHong2 = (matHang2 * 100000)* 10 / 100 ;
+    let hoaHong3 = (matHang3 * 150000)* 10 / 100 ;
+    switch (true) {
+        case (matHang1 >= 2000 && matHang2 >= 1000 && matHang3 >= 500):
+            alert("Hoa hồng nhận được " + (hoaHong1 + hoaHong2 + hoaHong3));
+            break;
+        case (matHang1 >= 2000 && matHang2 >= 1000):
+            alert("Hoa hồng nhận được "+ (hoaHong1 + hoaHong2));
+            break;
+        case (matHang1 >= 2000):
+            alert("Hoa hồng nhận được " + hoaHong1);
+            break;
+        case (matHang2 >= 1000):
+            alert("Hoa hồng nhận được " + hoaHong2);
+            break;
+        case (matHang3 >= 500):
+            alert("Hoa hồng nhận được " + hoaHong3);
+            break;
+        default:
+            alert("Cần cố gắng hơn")
+
+    }
+</script>
+</body>
+</html>

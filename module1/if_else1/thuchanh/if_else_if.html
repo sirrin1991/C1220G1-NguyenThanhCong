@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyệt tập với cấu trúc if else if</title>
+</head>
+<body>
+<script>
+    let ans = prompt("who are you?");
+    if (ans=="Admin") {
+        let value = prompt("what is your password?");
+        if (value=="TheMaster") {
+            alert("Welcome!!!");
+        }else if (value=null) {
+            alert("Canceled");
+        }else {
+            alert("Wrong password")
+        }
+    }else if (ans==null) {
+        alert("Canceled");
+    }else {
+        alert("I don't know you")
+    }
+</script>
+</body>
+</html>

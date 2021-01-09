@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {text-align: center; margin-top: 200px;width: 200px}
+    </style>
+</head>
+<body>
+<form name="frm"> <div style="display: flex ; justify-content: center">
+    <table border="1"  >
+        <tr>
+            <td colspan="4"><input id="input" > </td>
+        </tr>
+        <tr>
+            <td><input type="button" id="1" name="1" value="1" onclick="run1()"></td>
+            <td><input type="button" name="2" value="2" onclick="run2()"></td>
+            <td><input type="button" name="3" value="3" onclick="run3()"></td>
+            <td><input type="button" name="plus" value="+" onclick="runplus()"></td>
+        </tr>
+        <tr>
+            <td><input type="button" name="4" value="4" onclick="run4()"></td>
+            <td><input type="button" name="5" value="5" onclick="run5()"></td>
+            <td><input type="button" name="6" value="6" onclick="run6()"></td>
+            <td><input type="button" name="sub" value="-" onclick="runsub()"></td>
+        </tr>
+        <tr>
+            <td><input type="button" name="7" value="7" onclick="run7()">
+            <td><input type="button" name="8" value="8" onclick="run8()">
+            <td><input type="button" name="9" value="9" onclick="run9()">
+            <td><input type="button" name="mul" value="*" onclick="runmul()"></tr>
+        <tr>
+            <td><input type="button" name="C" value="C" onclick="runC()">
+            <td><input type="button" name="0" value="0" onclick="run0()">
+            <td><input type="button" name="calu" value="=" onclick="runby()">
+            <td><input type="button" name="div" value="/" onclick="rundiv()">
+        </tr>
+    </table>
+</div>
+</form>
+<script>
+    // let a = document.getElementById("input").value;
+        // a="";
+        function run1() {
+            let a = document.getElementById("input").value += 1;
+        }
+    function run2() {
+        let a = document.getElementById("input").value += "2";
+    }
+    function run3() {
+        let a = document.getElementById("input").value += "3";
+    }
+    function run4() {
+        let a = document.getElementById("input").value += "4";
+    }
+    function run5() {
+        let a = document.getElementById("input").value += "5";
+    }
+    function run6() {
+        let a = document.getElementById("input").value += "6";
+    }
+    function run7() {
+        let a = document.getElementById("input").value += "7";
+    }
+    function run8() {
+        let a = document.getElementById("input").value += "8";
+    }
+    function run9() {
+        let a = document.getElementById("input").value += "9";
+    }
+    function runplus() {
+        let a = document.getElementById("input").value += "+";
+    }
+    function runmul() {
+        let a = document.getElementById("input").value += "*";
+    }
+    function runsub() {
+        let a = document.getElementById("input").value += "-";
+    }
+    function rundiv() {
+        let a = document.getElementById("input").value += "/";
+    }
+    function run0() {
+        let a = document.getElementById("input").value += "0";
+    }
+    function runC() {
+        let a = document.getElementById("input").value = "";
+    }
+    function runby() {
+        let a = eval(document.getElementById("input").value);
+        document.getElementById("input").value = a;
+    }
+
+</script>
+</body>
+</html>

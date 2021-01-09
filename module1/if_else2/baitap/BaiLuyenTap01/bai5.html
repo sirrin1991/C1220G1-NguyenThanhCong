@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let diemKt = parseInt(prompt("Điểm kiểm tra"));
+    let diemGk = parseInt(prompt("Điểm kiểm tra giữa kỳ"));
+    let diemCk = parseInt(prompt("Điểm kiểm tra cuối kỳ"));
+    let diemTb = (diemKt + diemGk*2 + diemCk*3)/6;
+    if (diemTb < 5) {
+        alert("Học lực yếu")
+    }else if (diemTb < 6.5) {
+        alert("Học lực trung bình")
+    }else if ( diemTb < 8) {
+        alert("Học lực khá")
+    }else if ( diemTb <= 10) {
+        alert("Học lực giỏi")
+    }else {
+        alert("Nhập sai điểm vui lòng nhập lại")
+    }
+
+</script>
+</body>
+</html>
