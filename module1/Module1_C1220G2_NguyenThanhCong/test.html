@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Request2</title>
+    <style>
+        .wi {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="div0" class="wi">
+    <img src="furama-resort-da-nang_1.jpg" style="width: 100%;height: 300px">
+
+    <h3 style="text-align: center">Cộng Hòa Xã Hội Chủ Nghĩa Việt Nam</h3>
+    <h3 style="text-align: center">Độc lập - Tự do - Hạnh phúc</h3>
+    <h3 style="text-align: center">HỢP ĐỒNG</h3>
+    <span><b>Họ và tên : </b></span><span id="name" contenteditable="false">Nguyễn Văn A</span><br>
+    <span><b>Số CMND : </b></span><span id="cmnd" contenteditable="false">100200300</span><br>
+    <span><b>Ngày tháng năm sinh : </b></span><span id="birthday" contenteditable="false">10/10/1990</span><br>
+    <span><b>Email : </b></span><span id="mail" contenteditable="false">abcabc@gmail.com</span><br>
+    <span><b>Địa chỉ : </b></span><span id="address" contenteditable="false">999 Đường Nguyễn Tất Thành</span><br>
+    <span><b>Thành Phố : </b></span><input type="text" id="city" onclick="ct()"><br>
+<!--    <div id="div1">-->
+        <select id="div1">
+            <option value="hu" name="city" onclick="b11()">Huế</option>
+            <option value="dn" name="city" onclick="b22()">Đà Nẵng</option>
+            <option value="qn" name="city" onclick="b33()">Quảng Nam</option>
+        </select>
+<!--    </div>-->
+    <span><b>Loại Customer : </b></span> <input type="text" id="inputcus" onclick="cus()"><br>
+    <div id="div2">
+        <button type="button" onclick="b1()" value="dia" id="dia">Diamond</button>
+        <button type="button" onclick="b2()" value="pla" id="pla">Platinum</button>
+        <button type="button" onclick="b3()" value="gold" id="gold">Gold</button>
+        <button type="button" onclick="b4()" value="sil" id="sil">Silver</button>
+        <button type="button" onclick="b5()" value="mem" id="mem">Member</button>
+    </div>
+    <span><b>Giảm giá : </b></span><span id="giamgia"></span><br>
+    <span><b>Số lượng khách đi kèm : </b></span><span id="num" contenteditable="false">3</span><br>
+    <span><b>Số ngày thuê : </b></span><span id="rent" contenteditable="false">10</span><br>
+    <span><b>Loại dịch vụ : </b></span><input type="text" id="inputser" onclick="ser()"><br>
+    <div id="div3">
+        <button type="button" onclick="b6()" value="vil">Villa</button>
+        <button type="button" onclick="b7()" value="ho">House</button>
+        <button type="button" onclick="b8()" value="ro">Room</button>
+    </div>
+    <span><b>Loại phòng thuê : </b></span>
+    <select id="room">
+        <option name="room">Vip</option>
+        <option name="room">Business</option>
+        <option name="room">Normal</option>
+    </select><br><p id="1">Tổng tiền quý khách phải thanh toán là</p>
+
+    <input type="button" onclick="submit()" value="Đồng ý">
+    <input type="button" onclick="edit()" value="Edit">
+</div>
+<script>
+    function edit() {
+        let name = document.getElementById("name");
+        let cmnd = document.getElementById("cmnd");
+        let birthday = document.getElementById("birthday");
+        let mail = document.getElementById("mail");
+        let address = document.getElementById("address");
+        let num = document.getElementById("num");
+        let rent = document.getElementById("rent");
+        name.contentEditable = "true";
+        birthday.contentEditable = "true";
+        mail.contentEditable = "true";
+        address.contentEditable = "true";
+        cmnd.contentEditable = "true";
+        num.contentEditable = "true";
+        rent.contentEditable = "true";
+    }
+
+    document.getElementById("div1").style.display = 'none';
+    document.getElementById("div2").style.display = 'none';
+    document.getElementById("div3").style.display = 'none';
+    function cus() {
+        document.getElementById("div2").style.display = 'block';
+    }
+    function ser() {
+        document.getElementById("div3").style.display = 'block';
+    }
+    function ct() {
+        document.getElementById("div1").style.display = 'block';
+    }
+    function b1() {
+        document.getElementById("inputcus").value = "Diamond";
+    }
+    function b2() {
+        document.getElementById("inputcus").value = "Platinum";
+    }
+    function b3() {
+        document.getElementById("inputcus").value = "Gold";
+    }
+    function b4() {
+        document.getElementById("inputcus").value = "Silver";
+    }
+    function b5() {
+        document.getElementById("inputcus").value = "Member";
+    }
+    function b6() {
+        document.getElementById("inputser").value = "Villa";
+    }
+    function b7() {
+        document.getElementById("inputser").value = "House";
+    }
+    function b8() {
+        document.getElementById("inputser").value = "Room";
+    }
+    function b22() {
+        document.getElementById("city").value = "Đà Nẵng";
+    }
+    function b11() {
+        document.getElementById("city").value = "Huế";
+    }
+    function b33() {
+        document.getElementById("city").value = "Quảng Nam";
+    }
+    window.onclick = function(event) {
+        let a = document.getElementById("div0");
+        if (event.target == a) {
+            document.getElementById("div1").style.display = "none";
+            document.getElementById("div2").style.display = "none";
+        }
+    };
+    function submit() {
+        let name = document.getElementById("name");
+        let cmnd = document.getElementById("cmnd");
+        let birthday = document.getElementById("birthday");
+        let mail = document.getElementById("mail");
+        let address = document.getElementById("address");
+        let num = document.getElementById("num");
+        let rent = document.getElementById("rent");
+        name.contentEditable = "false";
+        birthday.contentEditable = "false";
+        mail.contentEditable = "false";
+        address.contentEditable = "false";
+        cmnd.contentEditable = "false";
+        num.contentEditable = "false";
+        rent.contentEditable = "false";
+        let rentD = parseFloat(document.getElementById("rent").innerHTML);
+        let diamond = document.getElementById("dia").value;
+        let platinum = document.getElementById("pla").value;
+        let gold = document.getElementById("gold").value;
+        let silver = document.getElementById("sil").value;
+        let member = document.getElementById("mem").value;
+
+        if (diamond==="dia") {
+            document.getElementById("1").innerText = ("kết quả" ) + (rentD*500 -15)
+        }
+
+
+    }
+</script>
+
+</body>
+</html>

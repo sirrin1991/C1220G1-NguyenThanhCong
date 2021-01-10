@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task1</title>
+    <style>
+    </style>
+</head>
+<body>
+<img src="furama-resort-da-nang_1.jpg" style="width: 100%;height: 300px">
+
+    <h3 style="text-align: center">Cộng Hòa Xã Hội Chủ Nghĩa Việt Nam</h3>
+    <h3 style="text-align: center">Độc lập - Tự do - Hạnh phúc</h3>
+    <h3 style="text-align: center">HỢP ĐỒNG</h3>
+    <span><b>Họ và tên : </b></span><span id="name"></span><br>
+    <span><b>Số CMND : </b></span><span id="cmnd"></span><br>
+    <span><b>Ngày tháng năm sinh : </b></span><span id="birthday"></span><br>
+    <span><b>Email : </b></span><span id="mail"></span><br>
+    <span><b>Địa chỉ : </b></span><span id="address"></span><br>
+    <span><b>Loại Customer : </b></span>
+    <select id="cus">
+        <option name="loaicus">Diamond</option>
+        <option name="loaicus">Platinum</option>
+        <option name="loaicus">Gold</option>
+        <option name="loaicus">Silver</option>
+        <option name="loaicus">Member</option>
+    </select> <br>
+    <span><b>Giảm giá : </b></span><span id="giamgia"></span><br>
+    <span><b>Số lượng khách đi kèm : </b></span><span id="num"></span><br>
+    <span><b>Số ngày thuê : </b></span><span id="rent"></span><br>
+    <span><b>Loại dịch vụ : </b></span><span id="ser"></span>
+    <select id="dichvu">
+        <option name="dichvu" value="villa">Villa 500$/Ngày</option>
+        <option name="dichvu" value="house">House 300$/Ngày</option>
+        <option name="dichvu" value="room">Room 100$/Ngày</option>
+    </select><br>
+    <span><b>Loại phòng thuê : </b></span>
+    <select id="room">
+        <option name="room">Vip</option>
+        <option name="room">Business</option>
+        <option name="room">Normal</option>
+    </select><br><p id="1">Tổng tiền quý khách phải thanh toán là</p>
+
+    <input type="button" onclick="submit()" value="Đồng ý">
+
+
+
+
+<script>
+    let name = prompt("Họ và tên");
+    document.getElementById("name").innerHTML = name;
+    let iCard = prompt("Số CMND/Passport");
+    document.getElementById("cmnd").innerHTML = iCard;
+    let dOB = prompt("Ngày tháng năm sinh");
+    document.getElementById("birthday").innerHTML = dOB;
+    let email = prompt("Email");
+    document.getElementById("mail").innerHTML = email;
+    let addRess = prompt("Địa chỉ");
+    document.getElementById("address").innerHTML = addRess;
+    let customer = prompt("Số lượng khách đi kèm");
+    document.getElementById("num").innerHTML = customer;
+    let rentDays = parseInt(prompt("Số ngày thuê"));
+    document.getElementById("rent").innerHTML = rentDays;
+    function submit() {
+        let serVice = document.getElementById("dichvu").value;
+        let moneyvilla = (rentDays * 500);
+        let moneyhouse = (rentDays * 300);
+        let moneyroom = (rentDays * 100);
+        if (serVice==="villa"){
+            document.getElementById("1").innerHTML = ("Tổng tiền quý khách phải thanh toán là " + moneyvilla + "$")
+        }else if (serVice==="house"){
+            document.getElementById("1").innerHTML = ("Tổng tiền quý khách phải thanh toán là " + moneyhouse+ "$")
+        }else {
+            document.getElementById("1").innerHTML = ("Tổng tiền quý khách phải thanh toán là " + moneyroom+ "$")
+        }
+
+
+    }
+
+
+</script>
+</body>
+</html>
