@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="cv"></p>
+<p id="tong"></p>
+
+
+
+<script>
+    let num ;
+    let total = 0;
+    let text="" ;
+    while (num != -1){
+        text +=  num + "<br>";
+        let total=0;
+        num = parseInt(prompt("Nhập số bất kì kết thúc nhập khi nhập -1"));
+        total += num;
+    }
+    document.getElementById("cv").innerHTML = text;
+    document.getElementById("tong").innerHTML = "Tổng của dãy số là " + (total)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="play()" id="1">Bắt Đầu</button>
+<script>
+    function play() {
+        document.getElementById("1").innerText = "Chơi Lại";
+        let a = parseInt(prompt("Bạn muốn dự đoán trong khoảng từ"));
+        let b = parseInt(prompt("Bạn muốn dự đoán trong khoảng đến"));
+        let num = parseInt(prompt("Số bạn dự đoán là"));
+        let min , max ;
+        if (a===b) {
+            alert("Vui lòng nhập lại không thể nhập 2 số bừng nhau")
+        } else if ( a > b) {
+            max = a;
+            min = b;
+        }else {
+            max = b;
+            min = a;
+        }
+        function TaoSoNgauNhien(min, max){
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        let random = TaoSoNgauNhien(min, max);
+        for (let i = 1; i < 3 ; i++){
+            if (num === random){
+                alert("Chúc mừng bạn đã đoán đúng");
+                break;
+            }else if (num < random){
+                alert("Số bạn đoán nhỏ hơn số ngẫu nhiên");
+                num = parseInt(prompt("Bạn được quyền đoán lại "));
+            }else {
+                alert("Số bạn đoán lớn hơn số ngẫu nhiên");
+                num = parseInt(prompt("Bạn được quyền đoán lại"))
+            }
+        } alert("Bạn đã đoán không đúng vui lòng bấm chơi lại để tiếp tục")
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tiengoc = parseFloat(prompt("Tiền vay ban đầu"));
+    let laixuat = parseFloat(prompt("Lãi hàng tháng tính theo %"));
+    let thang = parseFloat(prompt("Số tháng cho vay"));
+    let lai = tiengoc*((1+ laixuat/100)**thang);
+    let laikep = lai - tiengoc ;
+    laikep = laikep.toFixed(2);
+    alert("Số lãi phải trả sau " + thang + " tháng là " + laikep);
+</script>
+</body>
+</html>

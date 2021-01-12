@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = 0;
+    let b = 1;
+    let count = 0;
+    let N = 18;
+    let total = a + b;
+
+    for (let c, d ;count<=N;count++){
+        c = a + b;
+        a = b ;
+        b = c;
+        d = total + c;
+        total = d;
+
+
+    } document.write("Tổng 20 số đầu tiên trong dãy fibonacci là " + total)
+</script>
+</body>
+</html>

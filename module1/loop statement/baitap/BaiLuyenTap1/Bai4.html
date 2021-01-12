@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = 0;
+    let b = 1;
+    let count = 0;
+    let N = 2;
+    while (count !==N){
+        let total = a + b ;
+        if (total%5===0){
+            document.write(total + "<br>");
+            count++
+        }
+        a = b;
+        b = total;
+    }
+</script>
+</body>
+</html>

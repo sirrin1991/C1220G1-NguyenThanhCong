@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tab , i, j;
+    tab = "<table border='1' width='300' cellspacing='0' cellpadding='3'>";
+    i = 1;
+    j = 2;
+    while (i <= 9) {
+        tab = tab + "<tr>";
+        while (j <= 9) {
+            tab = tab + "<td>" + j +"x"+ i +"=" +(i*j) + "</td>";
+            j ++ ;
+        }
+        tab = tab + "</tr>";
+        j= 2;
+        i++;
+    }
+    tab = tab + "</table>";
+    document.write(tab);
+</script>
+</body>
+</html>
