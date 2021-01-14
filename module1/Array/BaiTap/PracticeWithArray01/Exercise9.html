@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [];
+    let b = [];
+    let num ;
+    let check=false;
+    for (let i = 0;i<10;i++) {
+        do {
+            num = prompt("nhập vào số phần tủ của mảng a");
+            check = (!isNaN(num) && num == parseInt(num));
+            num = parseInt(num);
+        } while (!check);
+        a[a.length] = num;
+    }
+    for (let i = 0;i<10;i++) {
+        do {
+            num = prompt("nhập vào số phần tủ của mảng b");
+            check = (!isNaN(num) && num == parseInt(num));
+            num = parseInt(num);
+        } while (!check);
+        b[b.length] = num;
+    }
+    let c = b.concat(a);
+    document.write(c)
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt("");
+    let arrStr = str.split("");
+    let i;
+    for(i=0 ; i<arrStr.length;i++){
+        if (arrStr[i]=="-"){
+            arrStr.splice(i,1,"_")
+        }
+    }
+    document.write(arrStr)
+</script>
+</body>
+</html>

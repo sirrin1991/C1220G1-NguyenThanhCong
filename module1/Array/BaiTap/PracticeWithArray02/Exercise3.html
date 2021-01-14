@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [];
+    let leng = parseInt(prompt("Nhập số lượng kí tự trong mảng"));
+    let i;
+    let count=0;
+    for (i=0; i < leng ; i++) {
+        array[i]= prompt("Nhập kí tự");
+        if (!isNaN(array[i])){
+            count++
+        }
+    }
+    alert("Số lượng kí tự số trong mảng là " + count)
+
+</script>
+</body>
+</html>

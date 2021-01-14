@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrNums=[ 1 , 23, 32, -34, 535, - 2, 3, 4, 100, 23333];
+    let V = parseInt(prompt("Nhập số nguyên bất kì"));
+    let i ;
+    let index = arrNums.indexOf(V);
+    if (index !== -1){
+        arrNums.splice(index,1);
+        arrNums.push(0)
+    }else {
+        alert("V is not in the array")
+    }
+    console.log(arrNums)
+</script>
+</body>
+</html>

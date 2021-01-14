@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="in1">
+<button type="button" onclick="trans()">Translate</button>
+<p id="vn"></p>
+<script>
+    let eng = ["Hello","Name","Age","Love"];
+    let vie = ["Xin Chào","Tên","Tuổi","Yêu"];
+
+    function trans() {
+        let engL = document.getElementById("in1").value;
+        for (let i = 0; i < eng.length; i++) {
+            if (eng[i] === engL) {
+                document.getElementById("vn").innerHTML = vie[i];
+                break;
+                }else {
+                document.getElementById("vn").innerHTML = "Không tìm thấy"
+            }
+        }
+    }
+</script>
+</body>
+</html>

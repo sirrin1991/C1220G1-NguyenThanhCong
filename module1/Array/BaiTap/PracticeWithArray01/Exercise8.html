@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrs = [];
+    let num ;
+    let check=false;
+    for (let i = 0;i<10;i++) {
+        do {
+            num = prompt("nhập vào số phần tủ của mảng");
+            check = (!isNaN(num) && num == parseInt(num));
+            num = parseInt(num);
+        } while (!check);
+        arrs[arrs.length] = num;
+    }
+    arrs.sort(function (a,b) {
+        return b-a
+
+    });
+    document.write(arrs)
+
+</script>
+</body>
+</html>
