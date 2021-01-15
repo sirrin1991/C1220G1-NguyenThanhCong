@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let stars = ["Polaris" , "Aldebaran" , "Deneb", "Vega", "Altair", "Dubhe","Regulus"];
+    let constellation = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    function searchStars(star) {
+        star = prompt("Nhập tên ngôi sao");
+        if (stars.indexOf(star) != -1){
+            alert("Ngôi sao bạn vừa nhập thuộc chòm sao " +  constellation[star.indexOf(star)])
+        }else {
+            alert("Ngôi sao bạn vừa nhập không có dữ liệu trên hệ thống")
+        }
+    }
+    searchStars();
+</script>
+</body>
+</html>

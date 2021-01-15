@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function reserveNum(num) {
+        let arrayNums = [];
+        for (i = 0 ; i < 10 ; i++){
+            num=parseInt(prompt("Nhập số nguyên bất kì"));
+            arrayNums[arrayNums.length]= num;
+        }
+        return arrayNums.reverse()
+    }
+    alert(reserveNum())
+</script>
+</body>
+</html>

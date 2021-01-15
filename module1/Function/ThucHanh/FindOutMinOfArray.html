@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function minArray(arr) {
+        if (arr.length==0){
+            return ("Mảng rỗng");
+        }
+        let min = 0;
+        for (let i=0; i< arr.length; i++){
+            if (arr[i]<min){
+                min = arr[i]
+            }
+        }
+        return min;
+
+    }
+    let arr = [];
+    let minOfArray = minArray(arr);
+    alert(minOfArray)
+</script>
+</body>
+</html>

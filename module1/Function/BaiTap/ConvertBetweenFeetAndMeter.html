@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Feet Conveter</h2>
+<input type="number" id="inputfeet" placeholder="Feet"
+        oninput="feetconverter(this.value)"
+        onchange="feetconverter(this.value)">
+<p id="FtoM"></p>
+<br><br><br><br><br>
+<h2>Meter Conveter</h2>
+<input type="number" id="inputmeter" placeholder="Meter"
+       oninput="meterconverter(this.value)"
+       onchange="meterconverter(this.value)">
+<p id="MtoF"></p>
+
+<script>
+    function feetconverter(feetNum) {
+         feetNum = parseFloat(feetNum);
+        document.getElementById("FtoM").innerHTML = 0.305*feetNum
+    }
+    function meterconverter(meterNum) {
+        meterNum = parseFloat(meterNum);
+        document.getElementById("MtoF").innerHTML = 3.279*meterNum
+    }
+</script>
+</body>
+</html>

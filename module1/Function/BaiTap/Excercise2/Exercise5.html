@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function minOfNumber(num1,num2,num3) {
+        num1 = parseInt(prompt("Nhập số nguyên thứ 1"));
+        num2 = parseInt(prompt("Nhập số nguyên thứ 2"));
+        num3 = parseInt(prompt("Nhập số nguyên thứ 3"));
+        if (num1 < num2 && num1 < num3){
+            return num1
+        }else if (num2<num3){
+            return num2
+        }else {
+            return num3
+        }
+
+    }
+    alert(minOfNumber())
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function doPerimeter(radius) {
+            let perimeterCircle = radius * 2 * 3.14;
+            alert("Chu vi hình tròn là "+ perimeterCircle);
+            return perimeterCircle
+    }
+    function doAcreage(radius) {
+        let acreageCircle = radius * radius * 3.14;
+        alert("Diện tích hình tròn là " + acreageCircle);
+        return acreageCircle
+    }
+    let radiusCircle = parseFloat(prompt("Nhập bán kính hình tròn :"));
+    doPerimeter(radiusCircle);
+    doAcreage(radiusCircle)
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function factorial(num) {
+        num = parseInt(prompt("Nhập số nguyên bất kì"));
+        let result ;
+        let fatorialOfNum = 1;
+        if (num<0){
+            alert("Số nguyên âm không có giai thừa")
+        }else if (num === 0){
+            alert("Giai thừa của 0 = 1")
+        }else {
+            for (i=1;i<=num;i++){
+                fatorialOfNum = fatorialOfNum * i
+            } alert("Giai thừa của " + num + " là " + fatorialOfNum)
+        }
+
+    }
+    factorial()
+</script>
+</body>
+</html>

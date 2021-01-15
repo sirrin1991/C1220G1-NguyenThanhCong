@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkCharacter(char) {
+        let arrayCharaters = [];
+        let character ;
+        let count = 0;
+        for (i=0;i<10;i++){
+            let char;
+                char = prompt("Nhập kí tự");
+            arrayCharaters[arrayCharaters.length] = char
+        }
+        let m = arrayCharaters.toString();
+        character = prompt("Nhập kí tự cần kiểm tra");
+        count = m.split(character).length - 1;
+        return count
+    }
+    alert(checkCharacter())
+
+</script>
+</body>
+</html>
