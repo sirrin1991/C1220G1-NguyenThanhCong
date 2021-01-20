@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<span><b>Số ngày thuê : </b><input type="text" id="rent" disabled>-->
+<!--    <button type="button" onclick="td()">bbbbb</button>-->
+<!--<button type="button" id="1" onclick="test()">ok</button>-->
+<!--<span id="span_Id">1121</span>-->
+
+<!--<button onclick="displayDate()">Click Me</button>-->
+<script>
+    // function test() {
+    //     let b = parseFloat(document.getElementById("rent").value);
+    //     if (Number.isInteger(b)){
+    //         if (b<=0){
+    //             alert("Vui lòng nhập đúng")
+    //         }
+    //     }else {
+    //         alert("vui lòng nhập đúng ")
+    //     }
+    // }
+    // function td() {
+    //     document.getElementById("rent").disabled = false;
+    //
+    // }
+    let a = "   nk  Kl";
+    let b = "";
+    a = a.trim();
+    for(i=0; i< a.length;i++){
+        if (a.charAt(i)===" " && a.charAt(i+1)=== " "){
+            continue;
+        }
+        if (i===0 || a.charAt(i-1)===" "){
+            b += a.charAt(i).toLocaleUpperCase();
+            continue;
+        }
+
+        b += a.charAt(i)
+    }
+    alert(b);
+    // b = a.toLocaleLowerCase();
+    // for (i=0 ; i<a.length;i++){
+    //     if(a.charAt(i-1)===" " || i===0){
+    //        b += a.charAt(i+1).toLocaleUpperCase()
+    //     }
+    //
+    // }alert(b)
+
+    //
+    // function displayDate() {
+    //     var span_Text = parseInt(document.getElementById("span_Id").innerText);
+    //     console.log(typeof span_Text )
+    // }
+
+</script>
+</body>
+</html>

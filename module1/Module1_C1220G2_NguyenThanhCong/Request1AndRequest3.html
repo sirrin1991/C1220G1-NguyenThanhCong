@@ -48,18 +48,105 @@
 
 <script>
     let name = prompt("Họ và tên");
+    name = name.trim();
+    name = name.toLocaleLowerCase();
+    let replaceName = " ";
+    for (i=0; i<name.length; i++){
+        if(name.charAt(i)===" " && name.charAt(i+1)===" "){
+            continue;
+        }
+        if (name.charAt(i-1)===" " || i ===0){
+            replaceName += name.charAt(i).toLocaleUpperCase();
+            continue;
+        }
+        replaceName += name.charAt(i)
+    }
+    name = replaceName;
     document.getElementById("name").innerHTML = name;
-    let iCard = prompt("Số CMND/Passport");
+    let check =false;
+    let iCard;
+    do{
+        iCard = parseFloat(prompt("Nhập số CMND"));
+      check = (Number.isInteger(iCard) && iCard.toString().length === 8)
+    }while (!check);
     document.getElementById("cmnd").innerHTML = iCard;
-    let dOB = prompt("Ngày tháng năm sinh");
+
+    check = false;
+    let dOB;
+    do {
+        dOB = prompt("Nhập ngày tháng năm sinh");
+        if (dOB.charAt(2) === "/" && dOB.charAt(5) === '/'){
+            let day = parseFloat(dOB.substring(0,2));
+            let month = parseFloat(dOB.substring(3,5));
+            let year = parseFloat(dOB.substring(6,10));
+            if (Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)){
+                if ( day > 0 && day < 32 && month > 0 && month < 13 && year > 1920 && year < 2021){
+                    check = true
+                }
+            }
+
+        }
+        if (!check){
+            alert("Vui lòng nhập sinh nhật đúng định dạng DD/MM/YYYY")
+        }
+    }while (!check);
     document.getElementById("birthday").innerHTML = dOB;
-    let email = prompt("Email");
+
+    check = false;
+    let email ;
+    let countA = 0;
+    let countDot = 0;
+    do {
+        email = prompt("Nhập Email của bạn");
+        if (email.length < 16){
+            alert("Vui lòng nhập đúng email");
+        }else {
+            for (let i = 5; i < email.length; i++) {
+                if (email.charAt(i) === "@") {
+                    countA++
+                }
+                for (let j = i + 1; j < email.length; j++) {
+                    if (email.charAt(i) === ".") {
+                        countDot++
+                    }
+                }
+            }
+            if (countDot < 1 && countA !== 1) {
+                alert("Vui lòng nhập đúng email")
+            } else {
+                check = true
+            }
+        }
+    }while (!check);
     document.getElementById("mail").innerHTML = email;
+
     let addRess = prompt("Địa chỉ");
+    let replaceAddress = "";
+    addRess = addRess.trim();
+    addRess = addRess.toLocaleLowerCase();
+    for (let i = 0; i<addRess.length; i++){
+        if (addRess.charAt(i) === " " && addRess.charAt(i+1) === " "){
+            continue;
+        }
+        if (i===0 || addRess.charAt(i-1)===" "){
+            replaceAddress += addRess.charAt(i).toLocaleUpperCase();
+            continue;
+        }
+        replaceAddress += addRess.charAt(i)
+    } addRess = replaceAddress;
     document.getElementById("address").innerHTML = addRess;
-    let customer = prompt("Số lượng khách đi kèm");
+
+    let customer;
+    do {
+        customer = parseFloat(prompt("Nhập số người đi cùng"));
+        check = (Number.isInteger(customer) && customer > 0 ) }
+    while (!check);
     document.getElementById("num").innerHTML = customer;
-    let rentDays = parseInt(prompt("Số ngày thuê"));
+    let rentDays;
+    do {
+        rentDays = parseFloat(prompt("Nhập số ngày thuê"));
+        check = (Number.isInteger(rentDays) && rentDays > 0 ) }
+    while (!check);
     document.getElementById("rent").innerHTML = rentDays;
     function submit() {
         let serVice = document.getElementById("dichvu").value;
