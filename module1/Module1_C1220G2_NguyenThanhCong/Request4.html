@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task2</title>
+</head>
+<body>
+<script>
+    let arrNameCustomers = [];
+    let nameCustomer;
+    let check = true;
+    do {
+        let choose = prompt("1. Add Name Customer.\n" +
+            "2. Delete Customer. \n" +
+            "3. Hiển thị danh sách Customer. \n" +
+            "4. Thoát");
+        switch (choose) {
+            case "1":
+                let count = parseInt(prompt("Nhập số lượng Customer bạn muốn thêm"));
+                if (Number.isInteger(count)){
+                for (let i = 0; i < count; i++) {
+                    nameCustomer = prompt("Nhập tên Customer");
+                    arrNameCustomers[arrNameCustomers.length] = nameCustomer;
+                }
+                }else {
+                    alert("Vui lòng nhập đúng số lượng")
+                }
+                break;
+            case "2":
+                let listCuss =[];
+                for (let i = 0 ;i <arrNameCustomers.length;i++){
+                    listCuss += "\n";
+                    listCuss += arrNameCustomers[i];
+                }
+                nameCustomer = prompt("Nhập tên Customer muốn xóa " + listCuss);
+                for (let i =0; i<arrNameCustomers.length;i++){
+                    if (nameCustomer === arrNameCustomers[i]){
+                        arrNameCustomers.splice(i,1);
+                        break;
+                    }else if (i === arrNameCustomers.length-1 && nameCustomer!== arrNameCustomers[i]){
+                        alert("Vui lòng nhập đúng tên Customer" )
+                    }
+                }
+                alert(arrNameCustomers);
+                break;
+            case "3":
+                let random =arrNameCustomers.sort(function (a,b) {
+                    return a.localeCompare(b);
+
+                });
+                alert(random);
+                break;
+            case "4":
+                check = false;
+                break;
+            default :
+                alert("Vui lòng chọn trong trình đơn")
+        }
+    }while (check)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrCustomers = [];
+    let name, iCard , dOB , email , address , customer , rentDays , kindOfCustomer, kindOfService ;
+    let check;
+    function displayMainMenu() {
+        let choose = prompt("1. Add New Customer(s)\n" +
+            "2. Display Information Customer \n" +
+            "3. Edit Information Customer\n" +
+            "4. Delete Customer\n" +
+            "5. Exit");
+        switch (choose) {
+            case "1" :
+                addNewCustomer();
+                displayMainMenu();
+                break;
+            case "2" :
+                displayInfoCustomer();
+                displayMainMenu();
+                break;
+            case "3" :
+                editInfoCustomer();
+                displayMainMenu();
+                break;
+            case "4" :
+                deleteCustomer();
+                displayMainMenu();
+                break;
+            case "5":
+                break;
+        }
+    }
+        // Thêm mới khách hàng
+        function addNewCustomer() {
+            let countCus = parseInt(prompt("Nhập số lượng khách hàng muốn thêm vào"));
+            if (isNaN(countCus)){
+                alert("Vui lòng nhập đúng định dạng số");
+                addNewCustomer()
+            }
+            for (let i = 0; i < countCus; i++) {
+                name = prompt("Họ và tên");
+                name = checkName(name);
+                checkICard();
+                checkDayOfBirth();
+                checkEmail();
+                checkAddress();
+                checkCustomer();
+                checkRentDays();
+                checkKingOfCustomer();
+                checkKindOfService();
+                let arrayCus = ["Họ và tên : " + name,
+                                "Số CMND : " + iCard,
+                                "Ngày tháng năm sinh : " + dOB,
+                                "Email : " + email,
+                                "Địa chỉ : " + address,
+                                "Khách đi cùng : " + customer,
+                                "Số ngày thuê : " + rentDays,
+                                "Bậc thành viên : " + kindOfCustomer,
+                                "Loại dịch vụ : " + kindOfService,];
+                arrCustomers.push(arrayCus);
+            }
+        }
+        // Hiển thị thông tin khách hàng
+        function displayInfoCustomer() {
+            let listCustomer = "";
+            let customerInfo = "";
+            for (let i = 0 ;i<arrCustomers.length;i++){
+                listCustomer += (i + 1) +"." + " " ;
+                for (let j=0;j<2;j++){
+                    listCustomer += " ";
+                    listCustomer += arrCustomers[i][j]
+                }
+                listCustomer += "\n"
+            }
+            let choose = parseInt(prompt("Chọn số thứ tự của khách hàng muốn hiển thị : \n" + listCustomer));
+            if (choose > arrCustomers.length || choose < 1 || isNaN(choose)){
+                alert("Vui lòng nhập số thứ tự có trong danh sách");
+                displayInfoCustomer()
+            }else {
+            for (let j = 0 ; j<9 ;j++){
+                    customerInfo += arrCustomers[choose-1][j];
+                    customerInfo += "\n"
+            }
+            alert(customerInfo);
+            }
+        }
+        function editInfoCustomer() {
+            let listCustomer = "";
+            let customerInfo = "";
+            for (let i = 0 ;i<arrCustomers.length;i++){
+                listCustomer += (i + 1) +"." + " " ;
+                for (let j=0;j<2;j++){
+                    listCustomer += " ";
+                    listCustomer += arrCustomers[i][j]
+                }
+                listCustomer += "\n"
+            }
+            let choose = parseInt(prompt("Nhập số thứ tự khách hàng muốn thay đổi thông tin \n" + listCustomer ));
+            if (choose > arrCustomers.length || choose < 1 || isNaN(choose)) {
+                alert("Vui lòng nhập số thứ tự có trong danh sách");
+                editInfoCustomer()
+            }else {
+                for (let j = 0 ; j<9 ;j++){
+                    customerInfo += (j+1) + ". " + arrCustomers[choose-1][j];
+                    customerInfo += "\n"
+                }
+            }
+            let chooseEdit = parseInt(prompt("Chọn thông tin cần thay đổi \n" + customerInfo));
+            if (chooseEdit < 1 || chooseEdit > 9 || isNaN(chooseEdit)){
+                alert("Vui lòng nhập số thứ tự có trong danh sách");
+                editInfoCustomer();
+            }else {
+                let newInfor;
+                switch (chooseEdit) {
+                    case 1:
+                        newInfor = prompt("Nhập thông tin");
+                        newInfor = checkName(newInfor);
+                        arrCustomers[choose-1][0] = "Họ và tên : " + newInfor;
+                        alert(arrCustomers[choose-1][0] + "\n" +
+                            arrCustomers[choose-1][1] + "\n" +
+                            arrCustomers[choose-1][2] + "\n" +
+                            arrCustomers[choose-1][3] + "\n"+
+                            arrCustomers[choose-1][4] + "\n"+
+                            arrCustomers[choose-1][5] + "\n"+
+                            arrCustomers[choose-1][6] + "\n"+
+                            arrCustomers[choose-1][7] + "\n"+
+                            arrCustomers[choose-1][8] );
+                        break;
+                    case 2:
+                        checkICard();
+                        arrCustomers[choose-1][1] = "Số CMND : " + iCard;
+                        alert(arrCustomers[choose-1][0] + "\n" +
+                            arrCustomers[choose-1][1] + "\n" +
+                            arrCustomers[choose-1][2] + "\n" +
+                            arrCustomers[choose-1][3] + "\n"+
+                            arrCustomers[choose-1][4] + "\n"+
+                            arrCustomers[choose-1][5] + "\n"+
+                            arrCustomers[choose-1][6] + "\n"+
+                            arrCustomers[choose-1][7] + "\n"+
+                            arrCustomers[choose-1][8] );
+                        break;
+                    case 3:
+                        checkDayOfBirth();
+                        arrCustomers[choose-1][2] = "Ngày Tháng Năm Sinh : " + dOB;
+                        alert(arrCustomers[choose-1][0] + "\n" +
+                            arrCustomers[choose-1][1] + "\n" +
+                            arrCustomers[choose-1][2] + "\n" +
+                            arrCustomers[choose-1][3] + "\n"+
+                            arrCustomers[choose-1][4] + "\n"+
+                            arrCustomers[choose-1][5] + "\n"+
+                            arrCustomers[choose-1][6] + "\n"+
+                            arrCustomers[choose-1][7] + "\n"+
+                            arrCustomers[choose-1][8] );
+                        break;
+                    case 4:
+                        checkEmail();
+                        arrCustomers[choose-1][3] = "Email : " + email;
+                        alert(arrCustomers[choose-1][0] + "\n" +
+                            arrCustomers[choose-1][1] + "\n" +
+                            arrCustomers[choose-1][2] + "\n" +
+                            arrCustomers[choose-1][3] + "\n"+
+                            arrCustomers[choose-1][4] + "\n"+
+                            arrCustomers[choose-1][5] + "\n"+
+                            arrCustomers[choose-1][6] + "\n"+
+                            arrCustomers[choose-1][7] + "\n"+
+                            arrCustomers[choose-1][8] );
+                        break;
+                    case 5:
+                        checkAddress();
+                        arrCustomers[choose-1][4] = "Địa chỉ : " + address;
+                        alert(arrCustomers[choose-1][0] + "\n" +
+                            arrCustomers[choose-1][1] + "\n" +
+                            arrCustomers[choose-1][2] + "\n" +
+                            arrCustomers[choose-1][3] + "\n"+
+                            arrCustomers[choose-1][4] + "\n"+
+                            arrCustomers[choose-1][5] + "\n"+
+                            arrCustomers[choose-1][6] + "\n"+
+                            arrCustomers[choose-1][7] + "\n"+
+                            arrCustomers[choose-1][8] );
+                        break;
+                    case 6:
+                        checkCustomer();
+                        arrCustomers[choose-1][5] = "Khách đi cùng : " + customer;
+                        alert(arrCustomers[choose-1][0] + "\n" +
+                            arrCustomers[choose-1][1] + "\n" +
+                            arrCustomers[choose-1][2] + "\n" +
+                            arrCustomers[choose-1][3] + "\n"+
+                            arrCustomers[choose-1][4] + "\n"+
+                            arrCustomers[choose-1][5] + "\n"+
+                            arrCustomers[choose-1][6] + "\n"+
+                            arrCustomers[choose-1][7] + "\n"+
+                            arrCustomers[choose-1][8] );
+                        break;
+                    case 7:
+                        checkRentDays();
+                        arrCustomers[choose-1][6] = "Số Ngày Thuê : " + rentDays;
+                        alert(arrCustomers[choose-1][0] + "\n" +
+                            arrCustomers[choose-1][1] + "\n" +
+                            arrCustomers[choose-1][2] + "\n" +
+                            arrCustomers[choose-1][3] + "\n"+
+                            arrCustomers[choose-1][4] + "\n"+
+                            arrCustomers[choose-1][5] + "\n"+
+                            arrCustomers[choose-1][6] + "\n"+
+                            arrCustomers[choose-1][7] + "\n"+
+                            arrCustomers[choose-1][8] );
+                        break;
+                    case 8:
+                        checkKingOfCustomer();
+                        arrCustomers[choose-1][7] = "Bậc thành viên : " + kindOfCustomer;
+                        alert(arrCustomers[choose-1][0] + "\n" +
+                            arrCustomers[choose-1][1] + "\n" +
+                            arrCustomers[choose-1][2] + "\n" +
+                            arrCustomers[choose-1][3] + "\n"+
+                            arrCustomers[choose-1][4] + "\n"+
+                            arrCustomers[choose-1][5] + "\n"+
+                            arrCustomers[choose-1][6] + "\n"+
+                            arrCustomers[choose-1][7] + "\n"+
+                            arrCustomers[choose-1][8] );
+                        break;
+                    case 9:
+                        checkKindOfService();
+                        arrCustomers[choose-1][8] = "Loại dịch vụ thuê : " + kindOfService;
+                        alert(arrCustomers[choose-1][0] + "\n" +
+                            arrCustomers[choose-1][1] + "\n" +
+                            arrCustomers[choose-1][2] + "\n" +
+                            arrCustomers[choose-1][3] + "\n"+
+                            arrCustomers[choose-1][4] + "\n"+
+                            arrCustomers[choose-1][5] + "\n"+
+                            arrCustomers[choose-1][6] + "\n"+
+                            arrCustomers[choose-1][7] + "\n"+
+                            arrCustomers[choose-1][8] );
+                        break;
+                }
+            }
+        }
+    function checkName(name) {
+        name = name.trim();
+        name = name.toLocaleLowerCase();
+        let replaceName = " ";
+        for (let i = 0; i < name.length; i++) {
+            if (name.charAt(i) === " " && name.charAt(i + 1) === " ") {
+                continue;
+            }
+            if (name.charAt(i - 1) === " " || i === 0) {
+                replaceName += name.charAt(i).toLocaleUpperCase();
+                continue;
+            }
+            replaceName += name.charAt(i)
+        }
+        return name = replaceName;
+    }
+    function checkICard() {
+        check = false;
+        do {
+            iCard = parseFloat(prompt("Nhập số CMND"));
+            check = (Number.isInteger(iCard) && iCard.toString().length === 8)
+        } while (!check);
+
+    }
+    function checkDayOfBirth() {
+        check = false;
+        do {
+            dOB = prompt("Nhập ngày tháng năm sinh");
+            if (dOB.charAt(2) === "/" && dOB.charAt(5) === '/') {
+                let day = parseFloat(dOB.substring(0, 2));
+                let month = parseFloat(dOB.substring(3, 5));
+                let year = parseFloat(dOB.substring(6, 10));
+                if (Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)) {
+                    if (day > 0 && day < 32 && month > 0 && month < 13 && year > 1920 && year < 2021) {
+                        check = true
+                    }
+                }
+            }
+            if (!check) {
+                alert("Vui lòng nhập sinh nhật đúng định dạng DD/MM/YYYY")
+            }
+        } while (!check);
+    }
+    function checkEmail() {
+        check = false;
+        let countA = 0;
+        let countDot = 0;
+        do {
+            email = prompt("Nhập Email của bạn");
+            if (email.length < 16) {
+                alert("Vui lòng nhập đúng email");
+            } else {
+                for (let i = 5; i < email.length; i++) {
+                    if (email.charAt(i) === "@") {
+                        countA++
+                    }
+                    for (let j = i + 1; j < email.length; j++) {
+                        if (email.charAt(i) === ".") {
+                            countDot++
+                        }
+                    }
+                }
+                if (countDot < 1 && countA !== 1) {
+                    alert("Vui lòng nhập đúng email")
+                } else {
+                    check = true
+                }
+            }
+        } while (!check);
+    }
+    function checkAddress() {
+        address = prompt("Địa chỉ");
+        let replaceAddress = "";
+        address = address.trim();
+        address = address.toLocaleLowerCase();
+        for (let i = 0; i < address.length; i++) {
+            if (address.charAt(i) === " " && address.charAt(i + 1) === " ") {
+                continue;
+            }
+            if (i === 0 || address.charAt(i - 1) === " ") {
+                replaceAddress += address.charAt(i).toLocaleUpperCase();
+                continue;
+            }
+            replaceAddress += address.charAt(i)
+        }
+        address = replaceAddress;
+    }
+    function checkCustomer() {
+        do {
+            customer = parseFloat(prompt("Nhập số người đi cùng"));
+            check = (Number.isInteger(customer) && customer > 0)
+        }
+        while (!check);
+    }
+    function checkRentDays() {
+        do {
+            rentDays = parseFloat(prompt("Nhập số ngày thuê"));
+            check = (Number.isInteger(rentDays) && rentDays > 0)
+        }
+        while (!check);
+    }
+    function checkKingOfCustomer() {
+        do {
+            kindOfCustomer = prompt("Nhập bậc Customer \n" + "(Diamond, Platinum, Gold, Silver, Member");
+            switch (kindOfCustomer) {
+                case "Diamond" :
+                case "Platinum" :
+                case "Gold" :
+                case "Silver" :
+                case "Member" :
+                    check = true;
+                    break;
+                default :
+                    alert("Vui lòng nhập đúng thông tin");
+                    check = false
+            }
+        } while (!check);
+    }
+    function checkKindOfService() {
+        do {
+            kindOfService = prompt("Nhập loại dịch vụ muốn thuê \n" + "(Villa , House , Room)");
+            switch (kindOfService) {
+                case "Villa":
+                case "House":
+                case "Room" :
+                    check = true;
+                    break;
+                default :
+                    alert("Vui lòng nhập đúng thông tin");
+                    check = false
+            }
+        } while (!check);
+    }
+    function deleteCustomer() {
+        let listCustomer = "";
+        for (let i = 0 ;i<arrCustomers.length;i++){
+            listCustomer += (i + 1) +"." + " " ;
+            for (let j=0;j<2;j++){
+                listCustomer += " ";
+                listCustomer += arrCustomers[i][j]
+            }
+            listCustomer += "\n"
+        }
+        let choose = parseInt(prompt("Nhập số thứ tự khách hàng bạn muốn xóa :"));
+        if (isNaN(choose)||choose<1||choose>arrCustomers.length){
+            alert("Vui lòng nhập đúng số thứ tự")
+        }else {
+            for (let i = 0 ; i < arrCustomers.length;i++){
+                if (i===choose-1){
+                    arrCustomers.splice(i,1)
+                }
+            }
+        }
+    }
+    displayMainMenu();
+</script>
+</body>
+</html>
