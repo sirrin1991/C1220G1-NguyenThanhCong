@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let point ;
+    function doPoint(point) {
+        if (5 - (point % 5) <=2 && point > 47){
+            point = point + (5- (point%5) );
+            return point;
+        }else {
+            return point;
+        }
+    }
+    do {
+        point = parseFloat(prompt("Nhập điểm học sinh"));
+        if ( point < 0 || point > 100) {
+            alert(" vui lòng nhập từ 0 - 100");
+        }
+    }while (point < 0 || point > 100 );
+
+    alert("Điểm sau khi làm tròn là " + doPoint(point))
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

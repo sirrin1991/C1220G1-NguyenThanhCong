@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrNumber = [];
+    let numberK;
+    let check = false;
+    do {
+        count = parseInt(prompt("Nhập số lượng số nguyên của mảng \n (lớn hơn 0 và nhỏ hơn hoặc bằng 50)"));
+    }while (count>50 || count <= 0);
+    do {
+        number = prompt("nhập số nguyên");
+        if(!isNaN(number)){
+            number = parseFloat(number);
+            if(Number.isInteger(number)){
+                arrNumber.push(number)
+            }
+        }
+    }while (arrNumber.length !==count);
+    do {
+        numberK = prompt("nhập số nguyên K");
+        if(!isNaN(numberK)){
+            numberK = parseFloat(numberK);
+            if(Number.isInteger(numberK) && numberK > 0){
+                check = true ;
+            }
+        }
+    }while (!check);
+
+    for (let i = 0 ; i < arrNumber.length;i++){
+        for (let j = i + 1 ; j < arrNumber.length;j++){
+            if ((arrNumber[i]+arrNumber[j]) % numberK === 0){
+                document.write(" " + "(" + arrNumber[i] + "," + arrNumber[j] + ")")
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>

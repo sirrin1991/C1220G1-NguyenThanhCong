@@ -21,11 +21,10 @@
         }
         setWidth(width) {
             this.width = width;
-            return this.width
         }
         setLength(length){
             this.length = length;
-            return this.length
+
         }
         acreage(){
             return this.length*this.width
@@ -37,16 +36,16 @@
 
             let ctx = canvas.getContext("2d");
             ctx.fillStyle = "red";
-            ctx.fillRect(100, 100, this.length, this.width);
+            ctx.fillRect(150, 50, this.length, this.width);
 
         }
     }
     let rectangle = new Rectangle(60,30);
     let rec2 = new Rectangle(200,100);
-    alert(rectangle.width);
-    alert(rectangle.length);
-    alert(rectangle.perimeter());
-    alert(rectangle.acreage());
+    // alert(rectangle.width);
+    // alert(rectangle.length);
+    // alert(rectangle.perimeter());
+    // alert(rectangle.acreage());
     let c = document.getElementById("myCanvas");
     let c2 = document.getElementById("myCanvas2");
     rectangle.draw(c2);

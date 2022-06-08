@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num ;
+    do {
+        num = prompt("Input number");
+        if (!isNaN(Number(num)) && Number(num) > 0 && Number.isInteger(parseFloat(num))) {
+            num = parseInt(num);
+            alert(num);
+            break;
+        }
+    } while (true);
+
+    function isPrime(num) { // 3
+        if (num < 2) {
+            return false;
+        } else if (num === 2) {
+            return true;
+        }
+        let check = true;
+        for (let j = 2; j <= Math.sqrt(num); j++) {
+            if (num % j === 0) {
+                check = false;
+                break;
+            }
+        }
+        return check;
+    }
+
+
+    let count = 0;
+    let number = 3;
+    document.write(2 + "<br>");
+    while (count < 19) {
+        let flag = true;
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if(number % i === 0){
+                flag = false;
+                break;
+            }
+        }
+
+        if (flag) {
+            count++;
+            document.write(number + "<br>")
+        }
+        number++;
+    }
+
+
+</script>
+</body>
+</html>

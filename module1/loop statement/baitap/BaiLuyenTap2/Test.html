@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = "aBc";
+    let arr = [];
+    for (let i = 0; i < a.length; i++){
+        if(a[i] === a[i].toUpperCase()){
+            arr.push(a[i].toLowerCase())
+        }else {
+            arr.push(a[i].toUpperCase())
+        }
+    }
+    alert(arr.join(''));
+</script>
+</body>
+</html>

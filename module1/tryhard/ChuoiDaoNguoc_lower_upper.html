@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // đảo ngược chuỗi
+
+    let a = prompt("nhập chuỗi");
+    let b = a.split("");
+    alert(b);
+    alert(typeof b);
+    let c = b.reverse();
+    c=c.join("");
+    alert(c);
+    alert(typeof c);
+
+
+    // Đổi chuỗi sang in hoa
+
+    a=a.toLocaleUpperCase();
+    alert(a);
+
+    // Đổi sang in thường ;
+
+    a=a.toLocaleLowerCase();
+    alert(a);
+
+    // Hoa -> thường và thường -> hoa
+    let str = "The Quick Brown Fox";
+    str=str.split("");
+
+    for(let x=0; x<str.length; x++) {
+        if((str[x].charCodeAt(0)>=65)&&(str[x].charCodeAt(0)<=90)) {
+            str[x]=str[x].toLowerCase();
+        }
+        else if((str[x].charCodeAt(0)>=92)&&(str[x].charCodeAt(0)<=122)) {
+            str[x]=str[x].toUpperCase();
+        }
+    }
+    document.write(str.join(""));
+</script>
+</body>
+</html>

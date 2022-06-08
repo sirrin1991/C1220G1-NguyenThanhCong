@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let check = false;
+    let number;
+    let count =  prompt("nhập số lượng số nguyên");
+    let arrNumber =[];
+    let sum = 0;
+    do {
+        number = prompt("nhập số nguyên");
+        if(!isNaN(number)){
+            number = parseFloat(number);
+            if(Number.isInteger(number)){
+                arrNumber.push(number)
+            }
+        }
+    }while (arrNumber.length != count);
+    alert(arrNumber);
+
+    //Tổng số dương lẻ
+    for (let i = 0; i < arrNumber.length;i++){
+        if (arrNumber[i] % 2 !==0 && arrNumber[i] > 0){
+            sum += arrNumber[i]
+        }
+    }
+    alert(sum);
+
+    //Tổng số nguyên tố ở vị trí chẵn
+
+    for(let i = 0 ; i < arrNumber.length ; i+=2){
+        if (i !== 0 && isPrime(arrNumber[i])){
+            sum+= arrNumber[i]
+        }
+    } alert(sum);
+    function isPrime(num) {
+        if (num<2){
+            return false;
+        }
+        let check= true;
+        for (let j=2; j<=Math.sqrt(num);j++){
+            if (num%j===0){
+                check=false;
+                break;
+            }
+        }
+        if (check){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+</script>
+</body>
+</html>

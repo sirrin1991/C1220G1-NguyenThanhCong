@@ -39,13 +39,12 @@
         // Thêm mới khách hàng
         function addNewCustomer() {
             let countCus = parseInt(prompt("Nhập số lượng khách hàng muốn thêm vào"));
-            if (isNaN(countCus)){
-                alert("Vui lòng nhập đúng định dạng số");
+            if (isNaN(countCus) || countCus < 1){
+                alert("Vui lòng nhập đúng định dạng số và lớn hơn 0");
                 addNewCustomer()
             }
             for (let i = 0; i < countCus; i++) {
-                name = prompt("Họ và tên");
-                name = checkName(name);
+                checkName();
                 checkICard();
                 checkDayOfBirth();
                 checkEmail();
@@ -116,12 +115,10 @@
                 alert("Vui lòng nhập số thứ tự có trong danh sách");
                 editInfoCustomer();
             }else {
-                let newInfor;
                 switch (chooseEdit) {
                     case 1:
-                        newInfor = prompt("Nhập thông tin");
-                        newInfor = checkName(newInfor);
-                        arrCustomers[choose-1][0] = "Họ và tên : " + newInfor;
+                        checkName();
+                        arrCustomers[choose-1][0] = "Họ và tên : " + name;
                         alert(arrCustomers[choose-1][0] + "\n" +
                             arrCustomers[choose-1][1] + "\n" +
                             arrCustomers[choose-1][2] + "\n" +
@@ -239,7 +236,8 @@
                 }
             }
         }
-    function checkName(name) {
+    function checkName() {
+        name = prompt("Họ và tên");
         name = name.trim();
         name = name.toLocaleLowerCase();
         let replaceName = " ";
@@ -253,7 +251,7 @@
             }
             replaceName += name.charAt(i)
         }
-        return name = replaceName;
+        name = replaceName;
     }
     function checkICard() {
         check = false;
@@ -382,13 +380,17 @@
             }
             listCustomer += "\n"
         }
-        let choose = parseInt(prompt("Nhập số thứ tự khách hàng bạn muốn xóa :"));
-        if (isNaN(choose)||choose<1||choose>arrCustomers.length){
-            alert("Vui lòng nhập đúng số thứ tự")
-        }else {
-            for (let i = 0 ; i < arrCustomers.length;i++){
-                if (i===choose-1){
-                    arrCustomers.splice(i,1)
+
+        if (arrCustomers.length===0){
+            alert("Danh sách rỗng")
+        }else {  let choose = parseInt(prompt("Nhập số thứ tự khách hàng bạn muốn xóa : \n" + listCustomer));
+                if (isNaN(choose)||choose<1||choose>arrCustomers.length){
+                    alert("Vui lòng nhập đúng số thứ tự")
+                }else {
+                    for (let i = 0 ; i < arrCustomers.length;i++){
+                        if (i===choose-1) {
+                            arrCustomers.splice(i, 1)
+                        }
                 }
             }
         }

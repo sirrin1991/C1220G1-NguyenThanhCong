@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt("Nhập n"));
+    let sum=0;
+
+    function giaiThua(number) {
+        let giaithua = 1;
+        for (let i = 1 ; i <= number ; i++){
+            giaithua=giaithua*i
+        } return giaithua
+    }
+ for (let i = 1 ; i<=n ; i ++){
+     sum += 1/giaiThua(2*i-1)
+ }
+ alert(sum)
+
+
+</script>
+</body>
+</html>

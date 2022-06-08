@@ -37,12 +37,12 @@
         chargePin() {
             if (this.pin < 5) {
                 while (this.pin <= 100) {
-                    this.pin += 0.0000001;
+                    this.pin += 0.01;
                 }
                 alert("đã đầy pin");
             }
         }
-        soansms() {
+        createSms() {
             if (this.isStatus()) {
                 // this.chargePin();
                 let sms = prompt("Nhập nội dung tin nhắn");
@@ -50,7 +50,7 @@
                 this.pin--;
             }
         }
-        guisms(mobile) {
+        sendSms(mobile) {
             if (this.isStatus) {
                 this.chargePin();
                 if (this.smsSoanThao.length === 0) {
@@ -71,7 +71,7 @@
                 this.pin--;
             }
         }
-        xemsms() {
+        viewSms() {
             if (this.isStatus()) {
                 this.chargePin();
                 let temp = "";
@@ -85,9 +85,9 @@
     }
     let nokia = new Mobile(4, "nokia", true);
     let iphone = new Mobile(90, "iphone", true);
-    nokia.soansms();
-    nokia.guisms(iphone);
-    iphone.xemsms();
+    nokia.createSms();
+    nokia.sendSms(iphone);
+    iphone.viewSms();
 </script>
 </body>
 ​

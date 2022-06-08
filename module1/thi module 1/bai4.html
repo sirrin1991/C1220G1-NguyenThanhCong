@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="Thêm mới khách hàng" onclick="themMoiKH();">
+<p id="hienThi"></p>
+<script>
+    class KhachHang {
+        constructor(maKH, tenKH, soDT, email,) {
+            this.maKH = maKH;
+            this.tenKH = tenKH;
+            this.soDT = soDT;
+            this.email = email;
+        }
+
+        getMaKH() {
+            return this.maKH;
+        }
+
+        getTenKH() {
+            return this.tenKH;
+        }
+
+        getSoDT() {
+            return this.soDT;
+        }
+
+        getEmail() {
+            return this.email;
+        }
+
+        setMaKH(maKH) {
+            this.maKH = maKH;
+        }
+
+        setTenKH(tenKH) {
+            this.tenKH = tenKH;
+        }
+
+        setSoDT(soDT) {
+            this.soDT = soDT;
+        }
+
+        setEmail(email) {
+            this.email = email;
+        }
+
+        getInfo() {
+            return "1. Mã KH : " + this.maKH + "\n2. Tên KH : " + this.tenKH +
+                "\n3. Số ĐT : " + this.soDT + "\n 4. Email : " + this.email;
+        }
+    }
+
+    let danhSachKH  = [];
+    let khachHang1 = new KhachHang("001","Thanh Công","0909394982","sirrin1991@gmail.com");
+    let khachHang2 = new KhachHang("002","Trần Văn Chánh","0909090909","anhchanh@gmail.com");
+    danhSachKH.push(khachHang1);
+    danhSachKH.push(khachHang2);
+    hienThi(danhSachKH);
+    function hienThi(danhSach) {
+        let danhSachDaSX=sapXepTheoTen(danhSach);
+        let doDaiDS=danhSachDaSX.length;
+        let bang = '<table border = "1">\n' +
+            '    <tr>\n' +
+            '        <th> STT</th>\n' +
+            '        <th> Mã KH</th>\n' +
+            '        <th> Tên KH</th>\n' +
+            '        <th> Số DT</th>\n' +
+            '        <th> Email</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < doDaiDS; i++) {
+            bang += '<tr>\n' +
+                '        <td> ' + (i + 1) + '</td>\n' +
+                '        <td> ' + danhSachDaSX[i].getMaKH() + '</td>\n' +
+                '        <td> ' + danhSachDaSX[i].getTenKH() + '</td>\n' +
+                '        <td> ' + danhSachDaSX[i].getSoDT() + '</td>\n' +
+                '        <td> ' + danhSachDaSX[i].getEmail() + '</td>\n' +
+                '    </tr>';
+        }
+        bang += '</table>';
+        document.getElementById("hienThi").innerHTML = bang;
+    }
+
+    function themMoiKH() {
+        let maKH = prompt(" Nhập mã khách hàng");
+        let tenKH = prompt(" Nhập tên thêm mới");
+        let soDT = prompt(" Nhập số điện thoại");
+        let email= prompt("Nhập Email");
+        let khachHang = new KhachHang(maKH, tenKH, soDT, email);
+        danhSachKH.push(khachHang);
+        hienThi(danhSachKH);
+    }
+    function sapXepTheoTen(danhSach) {
+        danhSach.sort(function (a,b) {
+            let tenA = a.tenKH;
+            let tenB = b.tenKH;
+            if (tenA < tenB) {
+                return -1;
+            }
+            if (tenA > tenB) {
+                return 1;
+            }
+            return 0;
+        });
+        return danhSach;
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrNumber = [];
+    let sum = 0;
+    let count;
+    do {
+        count = parseInt(prompt("Nhập số lượng số nguyên của mảng (<=20)"));
+    } while (count > 20 || count <= 0);
+    do {
+        number = prompt("nhập số nguyên");
+        if (!isNaN(number)) {
+            number = parseFloat(number);
+            if (Number.isInteger(number)) {
+                arrNumber.push(number)
+            }
+        }
+    } while (arrNumber.length !== count);
+    alert(arrNumber);
+    for (let i = 0; i < arrNumber.length; i++) {
+        if (arrNumber[i] % 3 === 0 && arrNumber[i] % 5 === 0) {
+            sum += arrNumber[i]
+        }
+    }
+    alert("Tổng bội chung của 3 và 5 bằng " + sum);
+</script>
+</body>
+</html>

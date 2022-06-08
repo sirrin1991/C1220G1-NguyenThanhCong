@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function  fibonacci(num) {
+        let a =0 , b= 1 , temp;
+        while (num>0){
+            temp=a;
+            a=a+b;
+            b=temp;
+            num--
+        }
+        return b
+  }
+  alert(fibonacci(13))
+</script>
+</body>
+</html>

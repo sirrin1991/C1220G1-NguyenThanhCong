@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("nhập số a"));
+    let b = parseInt(prompt("nhập số b"));
+    function timUcln(x,y){
+        while(x!==y)   {
+            if(x>y) x=x-y;
+            else y=y-x;
+        }
+        return x;
+    }
+    alert("Ước chung lớn nhất : " + timUcln(a,b));
+    alert("Bội chung nhỏ nhất : " + (a*b)/timUcln(a,b));
+    let arr = [1, 1, 1, 2, 2, 2, 3, 5, 3, 2];
+    let newArr = [...new Set(arr)];
+    console.log(newArr); // [ 1, 2, 3, 5 ]
+
+</script>
+</body>
+</html>
