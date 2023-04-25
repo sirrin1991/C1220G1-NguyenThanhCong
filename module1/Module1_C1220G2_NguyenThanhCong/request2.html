@@ -59,6 +59,16 @@
     <input type="button" onclick="edit()" value="Thay đổi thông tin">
 </div>
 <script>
+    window.onclick = function(event) {
+        let a = document.getElementById("div0");
+        console.log(event.target);
+        console.log(a);
+        if (event.target === a) {
+            document.getElementById("div1").style.display = "none";
+            document.getElementById("div2").style.display = "none";
+            document.getElementById("div3").style.display = "none";
+        }
+    };
     function edit() {
         let name = document.getElementById("name");
         let cmnd = document.getElementById("cmnd");
@@ -122,14 +132,7 @@
     function b33() {
         document.getElementById("city").value = "Quảng Nam";
     }
-    window.onclick = function(event) {
-        let a = document.getElementById("div0");
-        if (event.target === a) {
-            document.getElementById("div1").style.display = "none";
-            document.getElementById("div2").style.display = "none";
-            document.getElementById("div3").style.display = "none";
-        }
-    };
+
     function submit() {
         let name = document.getElementById("name");
         let cmnd = document.getElementById("cmnd");
